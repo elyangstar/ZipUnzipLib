@@ -1,0 +1,17 @@
+// DirectoryZip  --- c:\tmp 디렉토리를 c:\tmp.zip 으로 압축
+        CZipper zip;
+
+        if (zip.OpenZip("c:\\tmp.zip", false))
+                zip.AddFolderToZip("c:\\tmp", false);
+
+// FileZip --- c:\tmp\test.txt 파일을 c:\tmp.zip 으로 압축
+        CZipper zip;
+
+        if (zip.OpenZip("c:\\tmp.zip", false))
+                zip.AddFileToZip("c:\\tmp\\text.txt", false);
+
+// Unzip --- c:\tmp.zip 을 c:\tmp에 압축해제
+        CUnzipper uz;
+        bool br = uz.OpenZip("c:\\tmp.zip");
+        if(br)
+                br = uz.UnzipTo("c:\\tmp");
